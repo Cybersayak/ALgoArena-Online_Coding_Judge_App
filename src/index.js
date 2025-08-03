@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 
 const { PORT } = require('./config/server.config');
 const app = express();
+const apiRouter = require('./routes');
+
+app.use('/api', apiRouter);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
