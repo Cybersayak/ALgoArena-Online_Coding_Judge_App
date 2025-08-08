@@ -1,7 +1,10 @@
 const express = require('express');
 
-const {ProblemController} = require('../../controllers');
+const ProblemRouter = require('./problems.routes');
 
-const v1router = express.Router();
+const v1Router = express.Router();
 
-module.exports = v1router;
+v1Router.use('/problems', ProblemRouter);
+// v1Router.get('/problems', ProblemController.pingProblemController);
+
+module.exports = v1Router;
